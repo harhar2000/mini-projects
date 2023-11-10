@@ -1,0 +1,65 @@
+# nested dictionary representing a bookstore. 
+# Each key is a book category, such as "Fiction", "Non-Fiction", or "Children's Books". 
+# The values are dictionaries with individual books, each book containing details like the author and price
+
+
+bookstore = {
+    "Fiction": {
+        "1984": {
+            "author": "George Orwell",
+            "price": 8.99
+        },
+        "To Kill a Mockingbird": {
+            "author": "Harper Lee",
+            "price": 7.99
+        },
+        "The Great Gatsby": {
+            "author": "F. Scott Fitzgerald",
+            "price": 6.99
+        }
+    },
+    "Non-Fiction": {
+        "Sapiens": {
+            "author": "Yuval Noah Harari",
+            "price": 9.99
+        },
+        "Educated": {
+            "author": "Tara Westover",
+            "price": 8.49
+        },
+        "The Body": {
+            "author": "Bill Bryson",
+            "price": 10.99
+        }
+    },
+    "Children's Books": {
+        "Harry Potter and the Philosopher's Stone": {
+            "author": "J.K. Rowling",
+            "price": 7.49
+        },
+        "The Gruffalo": {
+            "author": "Julia Donaldson",
+            "price": 5.99
+        },
+        "Where the Wild Things Are": {
+            "author": "Maurice Sendak",
+            "price": 6.99
+        }
+    }
+}
+
+
+book_details = bookstore["Fiction"]["1984"]
+print("Details of '1984':")
+print(book_details)
+
+author = bookstore["Non-Fiction"]["Sapiens"]["author"]
+print(f"The author of 'Sapiens' is {author}.")
+
+
+print("Children's Books available:")
+for book, details in bookstore["Children's Books"].items():
+    print(f"{book} by {details['author']}, priced at £{details['price']}")
+
+price = bookstore["Children's Books"]["The Gruffalo"]["price"]
+print(f"The price of 'The Gruffalo' is £{price}.")
